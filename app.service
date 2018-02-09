@@ -1,0 +1,14 @@
+[Unit]
+Description=App
+After=network.target
+
+[Service]
+Type=simple
+User=appuser
+#EnvironmentFile=/home/appuser/config
+WorkingDirectory=/home/appuser/app
+ExecStart=/bin/bash -lc 'start.sh'
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
